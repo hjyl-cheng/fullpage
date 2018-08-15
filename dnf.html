@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>地下城与勇士</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.section1 {
+				background: url(img/1.jpg) no-repeat;
+				background-size: 100%;
+				background-repeat: no-repeat;
+			}
+			
+			.section2 {
+				background: url(img/2.jpg) no-repeat;
+				background-size: cover;
+				background-position: center center;
+				background-repeat: no-repeat;
+			}
+			
+			.section3 {
+				background: url(img/3.jpg) no-repeat;
+				background-size: cover;
+				background-position: center center;
+				background-repeat: no-repeat;
+			}
+			
+			.section4 {
+				background: url(img/4.jpg) no-repeat;
+				background-size: cover;
+				background-position: center center;
+				background-repeat: no-repeat;
+			}
+			
+			.logo {
+				width: 148px;
+				height: 85px;
+				background: url(img/bg1_03.png) no-repeat;
+				background-size: 100%;
+				position: absolute;
+				left: 45%;
+				top: -10%;
+				opacity: 0;
+			}
+			
+			.dsj {
+				width: 164px;
+				height: 34px;
+				background: url(img/bg1_07.png) no-repeat;
+				background-size: 100%;
+				position: absolute;
+				top: 45%;
+				left: 44%;
+				opacity: 0;
+			}
+			
+			.dsjz {
+				width: 149px;
+				height: 29px;
+				background: url(img/bg1_10.png) no-repeat;
+				background-size: 100%;
+				position: absolute;
+				top: 35%;
+				left: 20%;
+				opacity: 0;
+			}
+			
+			.dsjy {
+				width: 149px;
+				height: 29px;
+				background: url(img/bg1_13.png) no-repeat;
+				background-size: 100%;
+				position: absolute;
+				top: 35%;
+				left: 70%;
+				opacity: 0;
+			}
+			
+			.ald1 {
+				width: 455px;
+				height: 161px;
+				background: url(img/bg1_88.png) no-repeat;
+				background-size: 100%;
+				position: absolute;
+				left: 8%;
+				top: 45%;
+				opacity: 0;
+			}
+			
+			.ald2 {
+				width: 414px;
+				height: 161px;
+				background: url(img/bg1_20.png) no-repeat;
+				background-size: 100%;
+				position: absolute;
+				left: 61%;
+				top: 45%;
+				opacity: 0;
+			}
+			
+			.wqhg {
+				width: 1200px;
+				height: 62px;
+				background: url(img/c-rev-tit.png) no-repeat;
+				background-size: 100%;
+				position: absolute;
+				left: 5%;
+				top: 90%;
+				opacity: 0;
+			}
+			
+			.hz1 {
+				width: 270px;
+				height: 440px;
+				background: url(img/t-sea-pic01.png) no-repeat;
+				background-size: 100%;
+				position: absolute;
+				left: -94%;
+				top: 120%;
+				opacity: 0;
+				cursor: pointer;
+				overflow: hidden;
+			}
+			
+			.hz2 {
+				width: 270px;
+				height: 440px;
+				background: url(img/t-sea-pic02.png) no-repeat;
+				background-size: 100%;
+				position: absolute;
+				left: -71%;
+				top: 120%;
+				opacity: 0;
+				cursor: pointer;
+				overflow: hidden;
+			}
+			
+			.hz3 {
+				width: 270px;
+				height: 440px;
+				background: url(img/t-sea-pic03.png) no-repeat;
+				background-size: 100%;
+				position: absolute;
+				left: 152%;
+				top: 120%;
+				opacity: 0;
+				cursor: pointer;
+				overflow: hidden;
+			}
+			
+			.hz4 {
+				width: 270px;
+				height: 440px;
+				background: url(img/t-sea-pic04.png) no-repeat;
+				background-size: 100%;
+				position: absolute;
+				left: 175%;
+				top: 120%;
+				opacity: 0;
+				cursor: pointer;
+				overflow: hidden;
+			}
+			
+			.hz11 {
+				width: 270px;
+				height: 440px;
+				background: url(img/t-sea-cover01.png) no-repeat;
+				background-size: 100%;
+				position: absolute;
+				top: 100%;
+				cursor: pointer;
+				transition: all 0.4s;
+			}
+			
+			.hz22 {
+				width: 270px;
+				height: 440px;
+				background: url(img/t-sea-cover02.png) no-repeat;
+				background-size: 100%;
+				position: absolute;
+				top: 100%;
+				cursor: pointer;
+				transition: all 0.4s;
+			}
+			
+			.hz33 {
+				width: 270px;
+				height: 440px;
+				background: url(img/t-sea-cover03.png) no-repeat;
+				background-size: 100%;
+				position: absolute;
+				top: 100%;
+				cursor: pointer;
+				transition: all 0.4s;
+			}
+			
+			.hz44 {
+				width: 270px;
+				height: 440px;
+				background: url(img/t-sea-cover04.png) no-repeat;
+				background-size: 100%;
+				position: absolute;
+				top: 100%;
+				cursor: pointer;
+				transition: all 0.4s;
+			}
+			
+			.p1 {
+				font-size: 38px;
+				color: #949cb3;
+				font-family: "微软雅黑";
+				font-weight: bold;
+				position: absolute;
+				top: 108%;
+				left: 38%;
+				opacity: 0;
+			}
+			
+			.p2 {
+				font-size: 38px;
+				color: #949cb3;
+				font-family: "微软雅黑";
+				font-weight: bold;
+				position: absolute;
+				top: 208%;
+				left: 38%;
+				opacity: 0;
+			}
+			
+			.p3 {
+				font-size: 38px;
+				color: #949cb3;
+				font-family: "微软雅黑";
+				font-weight: bold;
+				position: absolute;
+				top: 308%;
+				left: 38%;
+				opacity: 0;
+			}
+			
+			.box1 {
+				width: 221px;
+				height: 440px;
+				background: url(img/s-sea-pic01.png) no-repeat;
+				background-size: 100%;
+				position: absolute;
+				left: -94%;
+				top: 220%;
+				opacity: 1;
+				cursor: pointer;
+				overflow: hidden;
+				opacity: 0;
+			}
+			
+			.box11 {
+				width: 221px;
+				height: 440px;
+				background: url(img/s-sea-cover01.png) no-repeat;
+				background-size: 100%;
+				position: absolute;
+				top: 100%;
+				cursor: pointer;
+				transition: all 0.4s;
+			}
+			
+			.box2 {
+				width: 221px;
+				height: 440px;
+				background: url(img/s-sea-pic02.png) no-repeat;
+				background-size: 100%;
+				position: absolute;
+				left: 24%;
+				top: 200%;
+				opacity: 1;
+				cursor: pointer;
+				overflow: hidden;
+				opacity: 0;
+			}
+			
+			.box22 {
+				width: 221px;
+				height: 440px;
+				background: url(img/s-sea-cover02.png) no-repeat;
+				background-size: 100%;
+				position: absolute;
+				top: 100%;
+				cursor: pointer;
+				transition: all 0.4s;
+			}
+			
+			.box3 {
+				width: 221px;
+				height: 440px;
+				background: url(img/s-sea-pic03.png) no-repeat;
+				background-size: 100%;
+				position: absolute;
+				left: 42%;
+				top: 224%;
+				opacity: 1;
+				cursor: pointer;
+				overflow: hidden;
+				opacity: 0;
+			}
+			
+			.box33 {
+				width: 221px;
+				height: 440px;
+				background: url(img/s-sea-cover03.png) no-repeat;
+				background-size: 100%;
+				position: absolute;
+				top: 100%;
+				cursor: pointer;
+				transition: all 0.4s;
+			}
+			
+			.box4 {
+				width: 221px;
+				height: 440px;
+				background: url(img/s-sea-pic04.png) no-repeat;
+				background-size: 100%;
+				position: absolute;
+				left: 60%;
+				top: 220%;
+				opacity: 1;
+				cursor: pointer;
+				overflow: hidden;
+				opacity: 0;
+			}
+			
+			.box44 {
+				width: 221px;
+				height: 440px;
+				background: url(img/s-sea-cover04.png) no-repeat;
+				background-size: 100%;
+				position: absolute;
+				top: 100%;
+				cursor: pointer;
+				transition: all 0.4s;
+			}
+			
+			.box5 {
+				width: 221px;
+				height: 440px;
+				background: url(img/s-sea-pic05.png) no-repeat;
+				background-size: 100%;
+				position: absolute;
+				left: 178%;
+				top: 220%;
+				opacity: 1;
+				cursor: pointer;
+				overflow: hidden;
+				opacity: 0;
+			}
+			
+			.box55 {
+				width: 221px;
+				height: 440px;
+				background: url(img/s-sea-cover05.png) no-repeat;
+				background-size: 100%;
+				position: absolute;
+				top: 100%;
+				cursor: pointer;
+				transition: all 0.4s;
+			}
+			
+			.wc1 {
+				width: 270px;
+				height: 440px;
+				background: url(img/f-sea-pic01.png) no-repeat;
+				background-size: 100%;
+				position: absolute;
+				left: -94%;
+				top: 320%;
+				opacity: 0;
+				cursor: pointer;
+				overflow: hidden;
+			}
+			
+			.wc2 {
+				width: 270px;
+				height: 440px;
+				background: url(img/f-sea-pic02.png) no-repeat;
+				background-size: 100%;
+				position: absolute;
+				left: -71%;
+				top: 320%;
+				opacity: 0;
+				cursor: pointer;
+				overflow: hidden;
+			}
+			
+			.wc3 {
+				width: 270px;
+				height: 440px;
+				background: url(img/f-sea-pic03.png) no-repeat;
+				background-size: 100%;
+				position: absolute;
+				left: 152%;
+				top: 320%;
+				opacity: 0;
+				cursor: pointer;
+				overflow: hidden;
+			}
+			
+			.wc4 {
+				width: 270px;
+				height: 440px;
+				background: url(img/f-sea-pic04.png) no-repeat;
+				background-size: 100%;
+				position: absolute;
+				left: 175%;
+				top: 320%;
+				opacity: 0;
+				cursor: pointer;
+				overflow: hidden;
+			}
+			
+			.wc11 {
+				width: 270px;
+				height: 440px;
+				background: url(img/f-sea-cover01.png) no-repeat;
+				background-size: 100%;
+				position: absolute;
+				top: 100%;
+				cursor: pointer;
+				transition: all 0.4s;
+			}
+			
+			.wc22 {
+				width: 270px;
+				height: 440px;
+				background: url(img/f-sea-cover02.png) no-repeat;
+				background-size: 100%;
+				position: absolute;
+				top: 100%;
+				cursor: pointer;
+				transition: all 0.4s;
+			}
+			
+			.wc33 {
+				width: 270px;
+				height: 440px;
+				background: url(img/f-sea-cover03.png) no-repeat;
+				background-size: 100%;
+
+				position: absolute;
+				top: 100%;
+				cursor: pointer;
+				transition: all 0.4s;
+			}
+			
+			.wc44 {
+				width: 270px;
+				height: 440px;
+				background: url(img/f-sea-cover04.png) no-repeat;
+				background-size: 100%;
+				position: absolute;
+				top: 100%;
+				cursor: pointer;
+				transition: all 0.4s;
+			}
+			.liefh{
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				background: rgba(0,0,0,0.8);
+				z-index: 99;
+				opacity: 0;
+			}
+			.lief{
+				width: 758px;
+				height: 433px;
+				background: url(img/10081059m19hs1w9wtz1c0.png) no-repeat;
+				background-size: 100%;
+				position: absolute;
+				top: 20%;
+				left: 10%;
+				opacity: 0;
+				z-index: 99;
+			}
+			.lief2{
+				width: 1084px;
+				height: 495px;
+				background: url(img/images/未标题-1_06.png) no-repeat;
+				background-size: 100%;
+				position: absolute;
+				top: 20%;
+				left: -4%;
+				opacity: 0;
+				z-index: 99;
+			}
+			.lief1{
+				width: 1084px;
+				height: 590px;
+				background: url(img/images/未标题-1_03.png) no-repeat;
+				background-size: 100%;
+				position: absolute;
+				top: -2%;
+				left: -4%;
+				opacity: 0;
+				z-index: 99;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="dowebok">
+			<div class="section section1">
+				<div class="liefh" id="liefh" onclick="aa1();"></div>
+					<div class="lief1" id="lief1" onclick="aa11();"></div>
+					<div class="lief2" id="lief2" onclick="aa22();"></div>
+					<div class="lief" id="lief" onclick="aa12();"></div>
+				<div class="logo"></div>
+				<div class="dsj"></div>
+				<div class="dsjz"></div>
+				<div class="dsjy"></div>
+				<div class="ald1"></div>
+				<div class="ald2"></div>
+				<div class="wqhg"></div>
+			</div>
+			<div class="section section2">
+				<p class="p1">[ 阿拉德计划第三季 ]</p>
+				<div class="hz1" title="往昔  追忆篇">
+					<div class="hz11"></div>
+				</div>
+				<div class="hz2" title="鬼剑  荣耀篇">
+					<div class="hz22"></div>
+				</div>
+				<div class="hz3" title="史诗绽放  第三期">
+					<div class="hz33"></div>
+				</div>
+				<div class="hz4" title="格斗家  华美之舞篇">
+					<div class="hz44"></div>
+				</div>
+			</div>
+			<div class="section section3">
+				<p class="p2">[ 阿拉德计划第二季 ]</p>
+				<div class="box1" title="勇士  成长篇">
+					<div class="box11"></div>
+				</div>
+				<div class="box2" title="勇士  减负篇">
+					<div class="box22"></div>
+				</div>
+				<div class="box3" title="全职业  进击篇">
+					<div class="box33"></div>
+				</div>
+				<div class="box4" title="异界  突围篇">
+					<div class="box44"></div>
+				</div>
+				<div class="box5" title="史诗  荣耀篇">
+					<div class="box55"></div>
+				</div>
+			</div>
+			<div class="section section4">
+				<p class="p3">[ 阿拉德计划第一季 ]</p>
+				<div class="wc1" title="启航篇">
+					<div class="wc11"></div>
+				</div>
+				<div class="wc2" title="乘风篇">
+					<div class="wc22"></div>
+				</div>
+				<div class="wc3" title="杨帆篇">
+					<div class="wc33"></div>
+				</div>
+				<div class="wc4" title="破浪篇">
+					<div class="wc44"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+	<script src="jq/jquery-1.11.1.js"></script>
+	<script src="js/jquery.fullPage.js"></script>
+
+	<script>
+		$("#dowebok").fullpage({
+			afterLoad: function(anchorLink, index) {
+				$(".section1 .logo").animate({ top: "10%", opacity: "1" }, 500);
+				$(".section1 .dsj").delay(500).animate({ top: "35%", opacity: "1" }, 500);
+				$(".section1 .dsjz").delay(500).animate({ left: "30%", opacity: "1" }, 500);
+				$(".section1 .dsjy").delay(500).animate({ left: "60%", opacity: "1" }, 500);
+				$(".section1 .ald1").delay(1000).animate({ left: "18%", opacity: "1" }, 500);
+				$(".section1 .ald2").delay(1000).animate({ left: "51%", opacity: "1" }, 500);
+				$(".section1 .wqhg").delay(1500).animate({ top: "80%", opacity: "1" }, 500);
+				$(".section2 .hz1").animate({ left: "6%", opacity: "1" }, 1000);
+				$(".section2 .hz2").animate({ left: "29%", opacity: "1" }, 1000);
+				$(".section2 .hz3").animate({ left: "52%", opacity: "1" }, 1000);
+				$(".section2 .hz4").animate({ left: "75%", opacity: "1" }, 1000);
+				$(".section2 .p1").animate({ top: "105%", opacity: "1" }, 1000);
+				$(".section3 .p2").animate({ top: "205%", opacity: "1" }, 1000);
+				$(".section3 .box1").animate({ left: "6%", opacity: "1" }, 1000);
+				$(".section3 .box2").animate({ top: "220%", opacity: "1" }, 1000);
+				$(".section3 .box3").animate({ top: "220%", opacity: "1" }, 1000);
+				$(".section3 .box4").animate({ top: "220%", opacity: "1" }, 1000);
+				$(".section3 .box5").animate({ left: "78%", opacity: "1" }, 1000);
+				$(".section4 .p3").animate({ top: "305%", opacity: "1" }, 1000);
+				$(".section4 .wc1").animate({ left: "6%", opacity: "1" }, 1000);
+				$(".section4 .wc2").animate({ left: "29%", opacity: "1" }, 1000);
+				$(".section4 .wc3").animate({ left: "52%", opacity: "1" }, 1000);
+				$(".section4 .wc4").animate({ left: "75%", opacity: "1" }, 1000);
+			},
+			onLeave: function(index, nextIndex, direction) {
+				$(".section1 .logo").animate({ top: "0%", opacity: "0" }, 200);
+				$(".section1 .dsj").delay(0).animate({ top: "55%", opacity: "0" }, 200);
+				$(".section1 .dsjz").delay(0).animate({ left: "20%", opacity: "0" }, 200);
+				$(".section1 .dsjy").delay(0).animate({ left: "70%", opacity: "0" }, 200);
+				$(".section1 .ald1").delay(0).animate({ left: "8%", opacity: "0" }, 200);
+				$(".section1 .ald2").delay(0).animate({ left: "61%", opacity: "0" }, 200);
+				$(".section1 .wqhg").delay(0).animate({ top: "90%", opacity: "0" }, 200);
+				$(".section2 .hz1").animate({ left: "-94%", opacity: "0" }, 200);
+				$(".section2 .hz2").animate({ left: "-71%", opacity: "0" }, 200);
+				$(".section2 .hz3").animate({ left: "152%", opacity: "0" }, 200);
+				$(".section2 .hz4").animate({ left: "175%", opacity: "0" }, 200);
+				$(".section2 .p1").animate({ top: "108%", opacity: "0" }, 200);
+				$(".section3 .p2").animate({ top: "208%", opacity: "0" }, 200);
+				$(".section3 .box1").animate({ left: "-94%", opacity: "0" }, 200);
+				$(".section3 .box2").animate({ top: "200%", opacity: "0" }, 200);
+				$(".section3 .box3").animate({ top: "224%", opacity: "0" }, 200);
+				$(".section3 .box4").animate({ top: "200%", opacity: "0" }, 200);
+				$(".section3 .box5").animate({ left: "178%", opacity: "0" }, 200);
+				$(".section4 .p3").animate({ top: "308%", opacity: "0" }, 200);
+				$(".section4 .wc1").animate({ left: "-94%", opacity: "0" }, 200);
+				$(".section4 .wc2").animate({ left: "-71%", opacity: "0" }, 200);
+				$(".section4 .wc3").animate({ left: "152%", opacity: "0" }, 200);
+				$(".section4 .wc4").animate({ left: "175%", opacity: "0" }, 200);
+			},
+			afterRender: function() { //可以用来定义首屏加载动画
+				$(".section1 .logo").animate({ top: "10%", opacity: "1" }, 1000);
+				$(".section1 .dsj").delay(500).animate({ top: "35%", opacity: "1" }, 500);
+				$(".section1 .dsjz").delay(500).animate({ left: "30%", opacity: "1" }, 500);
+				$(".section1 .dsjy").delay(500).animate({ left: "60%", opacity: "1" }, 500);
+				$(".section1 .ald1").delay(1000).animate({ left: "18%", opacity: "1" }, 500);
+				$(".section1 .ald2").delay(1000).animate({ left: "51%", opacity: "1" }, 500);
+				$(".section1 .wqhg").delay(1500).animate({ top: "80%", opacity: "1" }, 500);
+//				$(".section1 .liefh").delay(1500).animate({ opacity: "1" }, 500);
+//				$(".section1 .lief1").delay(2100).animate({ opacity: "1" }, 300);
+//				$(".section1 .lief2").delay(2200).animate({ opacity: "1" }, 300);
+//				$(".section1 .lief").delay(2400).animate({ opacity: "1" }, 0);
+			}
+
+		});
+
+		$(".hz1").hover(function() {
+			$(".hz11").css({ top: 0 })
+		}, function() {
+			$(".hz11").css({ top: "100%" })
+		});
+		$(".hz2").hover(function() {
+			$(".hz22").css({ top: 0 })
+		}, function() {
+			$(".hz22").css({ top: "100%" })
+		});
+		$(".hz3").hover(function() {
+			$(".hz33").css({ top: 0 })
+		}, function() {
+			$(".hz33").css({ top: "100%" })
+		});
+		$(".hz4").hover(function() {
+			$(".hz44").css({ top: 0 })
+		}, function() {
+			$(".hz44").css({ top: "100%" })
+		});
+
+		$(".box1").hover(function() {
+			$(".box11").css({ top: 0 })
+		}, function() {
+			$(".box11").css({ top: "100%" })
+		});
+		$(".box2").hover(function() {
+			$(".box22").css({ top: 0 })
+		}, function() {
+			$(".box22").css({ top: "100%" })
+		});
+		$(".box3").hover(function() {
+			$(".box33").css({ top: 0 })
+		}, function() {
+			$(".box33").css({ top: "100%" })
+		});
+		$(".box4").hover(function() {
+			$(".box44").css({ top: 0 })
+		}, function() {
+			$(".box44").css({ top: "100%" })
+		});
+		$(".box5").hover(function() {
+			$(".box55").css({ top: 0 })
+		}, function() {
+			$(".box55").css({ top: "100%" })
+		});
+
+		$(".wc1").hover(function() {
+			$(".wc11").css({ top: 0 })
+		}, function() {
+			$(".wc11").css({ top: "100%" })
+		});
+		$(".wc2").hover(function() {
+			$(".wc22").css({ top: 0 })
+		}, function() {
+			$(".wc22").css({ top: "100%" })
+		});
+		$(".wc3").hover(function() {
+			$(".wc33").css({ top: 0 })
+		}, function() {
+			$(".wc33").css({ top: "100%" })
+		});
+		$(".wc4").hover(function() {
+			$(".wc44").css({ top: 0 })
+		}, function() {
+			$(".wc44").css({ top: "100%" })
+		});
+	</script>
+	
+	<!--<script>
+			function aa1() {
+				setTimeout("hide()", 0) // 这个是主要参数，设置消失的时间
+			}
+
+			function hide() {
+				document.getElementById('lief1').style.display = 'block';//这个是操作DIV消失的命令
+			}
+			
+			function aa11() {
+				setTimeout("hide1()", 0) // 这个是主要参数，设置消失的时间
+			}
+
+			function hide1() {
+				document.getElementById('lief2').style.display = 'block';//这个是操作DIV消失的命令
+			}
+			
+			function aa22() {
+				setTimeout("hide2()", 0) // 这个是主要参数，设置消失的时间
+			}
+
+			function hide2() {
+				document.getElementById('lief2').style.display = 'none';
+				document.getElementById('lief1').style.display = 'none';
+				document.getElementById('lief').style.display = 'block';//这个是操作DIV消失的命令
+			}
+			
+			function aa12() {
+				setTimeout("hide3()", 0) // 这个是主要参数，设置消失的时间
+			}
+
+			function hide3() {
+				document.getElementById('lief2').style.display = 'none';
+				document.getElementById('lief1').style.display = 'none';
+				document.getElementById('lief').style.display = 'none';
+				document.getElementById('liefh').style.display = 'none';
+				//这个是操作DIV消失的命令
+			}
+		</script>-->
+	
+</html>
